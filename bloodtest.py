@@ -63,7 +63,7 @@ def search_risk(query_text):
     query_text = query_text.lower()
     result = df.copy()
 
-    # جنسیت
+    #جنسیت
     if "مرد" in query_text:
         result = result[result["Gender"] == "M"]
     if "زن" in query_text:
@@ -99,11 +99,11 @@ def search_risk(query_text):
     if "ریسک کلیه پایین" in query_text:
         result = result[result["CKD_Risk_Level"] == "Low"]
 
-    # نمایش تعداد رکوردها و خود جدول
+
     print(f"تعداد رکوردهای پیدا شده: {len(result)}")
     return result
 
-# مثال استفاده
+
 query = input("جمله خود را برای جستجو وارد کنید: ")
 print(search_risk(query))
 
